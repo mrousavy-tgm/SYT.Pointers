@@ -41,6 +41,11 @@ void printLottoTip() {
     printf("Lotto tips: %i, %i, %i, %i, %i, %i\n", z1, z2, z3, z4, z5, z6);
 }
 
+// Print Kegel 30 mal
+void printKegelListe() {
+    for(int i = 0; i < 30; i++)
+        printKegel((int)((double)rand() / RAND_MAX * 100), (int)((double)rand() / RAND_MAX * 100));
+}
 
 
 
@@ -75,4 +80,5 @@ int main(void) {
 	printf("1: %i, 2: %i, 3: %i, 4: %i, 5: %i, 6: %i\n", *rnd_1, *rnd_2, *rnd_3, *rnd_4, *rnd_5, *rnd_6);
     printLottoTip();
     printKegel(5, 10);
+    printKegelListe();
 }
