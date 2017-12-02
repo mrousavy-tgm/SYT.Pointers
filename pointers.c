@@ -47,21 +47,25 @@ void printKegelListe() {
         printKegel((int)((double)rand() / RAND_MAX * 100), (int)((double)rand() / RAND_MAX * 100));
 }
 
+// Kegel read & calc
+void kegelEinlesenUndBerechnen() {
+    printf("Bitte geben Sie radius ein: ");
+    int radius = getchar() - '0';
+    printf("\n");
+    getchar();
+    printf("Bitte geben Sie höhe ein: ");
+    int hoehe = getchar() - '0';
+    printf("\n");
+    printKegel(radius, hoehe);
+}
 
+// 30 lotto tips
+void printLottoTips() {
+    for(int i = 0; i < 30; i++)
+        printLottoTip();
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+// Main func
 int main(void) {
 	srand(time(0));
 	printf("Arbeiten mit Pointer:\n");
@@ -81,4 +85,6 @@ int main(void) {
     printLottoTip();
     printKegel(5, 10);
     printKegelListe();
+    printLottoTips();
+    kegelEinlesenUndBerechnen();
 }
