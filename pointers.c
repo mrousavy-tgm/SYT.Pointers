@@ -22,10 +22,24 @@ void lottoTip(int* out_1, int* out_2, int* out_3, int* out_4, int* out_5, int* o
 	*out_6 = (double)rand() / RAND_MAX * 45;
 }
 
+// Vergleiche Zahlen miteinander
+int istGleich(int z, int z1, int z2, int z3, int z4, int z5, int z6) {
+    return z == z1;     // Angabe unklar!!!
+}
 
+// Print kegel info
+void printKegel(double radius, double hoehe) {
+    double* volumen, oberflaeche;
+    kegel(radius, hoehe, &volumen, &oberflaeche);
+    printf("Kegel Volumen: %f, Oberfläche: %f\n", volumen, oberflaeche);
+}
 
-
-
+// Erzeugt einen Lotto Tip und printed ihn auf der Konsole
+void printLottoTip() {
+    int* z1, z2, z3, z4, z5, z6;
+    lottoTip(&z1, &z2, &z3, &z4, &z5, &z6);
+    printf("Lotto tips: %i, %i, %i, %i, %i, %i\n", z1, z2, z3, z4, z5, z6);
+}
 
 
 
@@ -59,4 +73,6 @@ int main(void) {
 	int* rnd_6 = (int*)malloc(sizeof(int));
 	lottoTip(rnd_1, rnd_2, rnd_3, rnd_4, rnd_5, rnd_6);
 	printf("1: %i, 2: %i, 3: %i, 4: %i, 5: %i, 6: %i\n", *rnd_1, *rnd_2, *rnd_3, *rnd_4, *rnd_5, *rnd_6);
+    printLottoTip();
+    printKegel(5, 10);
 }
